@@ -1,9 +1,20 @@
 import {Component} from 'angular2/core';
 import 'rxjs/Rx';   // Load all features
+import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
+//components
+
+import { WelcomeComponent } from '../app/home/welcome.component';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    templateUrl: './app/app.component.html'
 })
-export class AppComponent { }
+
+@RouteConfig([
+    {path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault: true}        
+])
+export class AppComponent { 
+        pageTitle: string = 'Calorie Intake';
+
+}
