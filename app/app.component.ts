@@ -1,4 +1,6 @@
 import {Component} from 'angular2/core';
+import 'rxjs/Rx';   // Load all features
+
 
 @Component({
     selector: 'my-app',
