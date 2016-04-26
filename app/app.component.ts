@@ -1,5 +1,7 @@
 import { Component } from 'angular2/core';
 import 'rxjs/Rx';   // Load all features
+import { HTTP_PROVIDERS } from 'angular2/http';
+
 import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
 
 //components
@@ -9,8 +11,8 @@ import { WelcomeComponent } from '../app/home/welcome.component';
 @Component({
     selector: 'my-app',
     templateUrl: './app/app.component.html',
-    directives: [ROUTER_DIRECTIVES]
-    //providers: [ROUTER_PROVIDERS]
+    directives: [ROUTER_DIRECTIVES],
+    providers: [ROUTER_PROVIDERS]
 })
 
 @RouteConfig([
