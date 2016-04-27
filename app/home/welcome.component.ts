@@ -23,4 +23,10 @@ export class WelcomeComponent {
         })
     
     }
+
+    doLogin(event) {
+        console.log(this.form.value);
+        event.preventDefault();
+    }
+
 }

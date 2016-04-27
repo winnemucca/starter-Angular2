@@ -3,7 +3,7 @@
         <div class="col-sm-6 col-md-6 col-md-offset-3">
             <h1 class="text-center login-title">{{pageTitle}}</h1>
 
-            <form role="form" class=" form-horizontal" [ngFormModel]="form" >
+            <form role="form" class=" form-horizontal" [ngFormModel]="form" (submit)="doLogin($event)">
                 <div class="col-md-12">
                     <div class="form-group"> 
                         <input type="text" class="form-control" name="firstName" placeholder="First Name" ngControl="firstName" #firstName="ngForm"/>
