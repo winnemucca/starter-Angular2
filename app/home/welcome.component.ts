@@ -15,21 +15,25 @@ export class WelcomeComponent {
     lastName: Control;
     email: Control;
     password: Control;
+    passwordConfirm: Control;
 
     form: ControlGroup;
 
     constructor(private formbuilder: FormBuilder) {
         this.firstName = new Control('', Validators.compose([Validators.required, Validators.minLength(4)]));
-        this.lastName = new Control('', Validators.required);
+        this.lastName = new Control('', Validators.compose([Validators.required, Validators.minLength(3)]));
         this.email = new Control('', Validators.required);
         this.password = new Control('', Validators.required);
+        this.passwordConfirm = new Control('', Validators.required);
+        
 
         this.form = formbuilder.group({
 
             firstName: this.firstName,
             lastName: this.lastName,
             email: this.email,
-            password: this.password
+            password: this.password,
+            passwordConfirm: this.passwordConfirm
         });
         
     }
@@ -48,7 +52,7 @@ export class WelcomeComponent {
 
     doLogin(event) {
         console.log(this.form.value);
-        event.preventDefault();
+       // event.preventDefault();
     }
 
 }
