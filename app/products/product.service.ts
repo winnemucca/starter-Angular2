@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 
 export class ProductService {
-    private _productUrl = 'api/products.json';
+    private _productUrl = '/api/products.json';
 
     constructor(private _http: Http) { }
 

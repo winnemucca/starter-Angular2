@@ -1,10 +1,10 @@
-import {Component } from 'angular2/core';
+import {Component , OnInit} from 'angular2/core';
 import { IProduct } from './product';
 import { StarComponent } from '../shared/star.component';
 
 import { ROUTER_DIRECTIVES } from 'angular2/router';
 
-import { ProductService } from '../products/product.service';
+import { ProductService } from './product.service';
 
 
 @Component({
@@ -18,13 +18,20 @@ export /**
  * ProductList
  */
     class ProductListComponent {
+        pageTitle: string = 'Beer List';
+        errorMessage: string;
+        products: IProduct[];
         
-         products: IProduct[];
         constructor(private _productService: ProductService) {
         
         }
 
         ngOnInit(): void {
             // this.products = this._productService.getProducts
+            this._productService.getProducts()
+                .subscribe(
+                products => this.products = products,
+                    error => this.errorMessage = <any>error
+                    )
         }
 }
