@@ -7,6 +7,11 @@ import { ROUTER_PROVIDERS, RouteConfig, ROUTER_DIRECTIVES } from 'angular2/route
 import { WelcomeComponent} from './home/welcome.component';
 import { DashboardComponent} from './dashboard/dashboard.component';
 
+import {ProductListComponent} from './products/product-list.component';
+
+//services 
+import { ProductService} from './products/product.service';
+
 
 //components
 
@@ -15,12 +20,13 @@ import { DashboardComponent} from './dashboard/dashboard.component';
     templateUrl: './app/app.component.html',
     // initially did not have welcomeComponent and it still worked ???????
     directives: [ROUTER_DIRECTIVES],
-    providers: [ROUTER_PROVIDERS]
+    providers: [ROUTER_PROVIDERS, ProductService, HTTP_PROVIDERS]
 })
 
 @RouteConfig([
     {path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault:true },
-    {path: '/dashboard', name: 'Dashboard', component: DashboardComponent}        
+    { path: '/dashboard', name: 'Dashboard', component: DashboardComponent },
+    {path: '/products', name: 'Products', component: ProductListComponent}
 ])
 export class AppComponent { 
     pageTitle: string = 'Calorie Intake';

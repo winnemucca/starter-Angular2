@@ -4,7 +4,7 @@ import { StarComponent } from '../shared/star.component';
 
 import { ROUTER_DIRECTIVES } from 'angular2/router';
 
-
+import { ProductService } from '../products/product.service';
 
 
 @Component({
@@ -17,6 +17,14 @@ import { ROUTER_DIRECTIVES } from 'angular2/router';
 export /**
  * ProductList
  */
-class ProductList {
-    
+    class ProductListComponent {
+        
+         products: IProduct[];
+        constructor(private _productService: ProductService) {
+        
+        }
+
+        ngOnInit(): void {
+            // this.products = this._productService.getProducts
+        }
 }

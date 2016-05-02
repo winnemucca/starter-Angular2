@@ -1,1 +1,38 @@
-<h1>Eventual home of product descriptions </h1>
+<h1>Home of product descriptions </h1>
+
+<div class="panel panel-primary"> 
+    <div class="panel-body"> 
+        <div class="row"> 
+            <div class="col-md-2">Filter by: </div>
+        </div>
+        
+        <div class='col-md-4'>
+            <input type='text'  />
+        </div>
+        <!--set up error message-->
+        <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
+
+        <div class="table-responsive"> 
+            <table class="table" *ngIf='products && products.length'> 
+                <thead> 
+                    <tr> 
+                        <th>Id:</th>
+                        <th>BeerStyle:</th>
+                        <th>IBU:</th>
+                        <th>5 Star Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="#product of products"> 
+                        <td>{{product.id}} </td>
+                        <td>{{product.BeerStyle}} </td>
+                        <td>{{product.IBU}} </td>
+                        <td>{{product.starRating}} </td>
+                 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</div>
