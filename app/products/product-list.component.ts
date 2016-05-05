@@ -20,7 +20,7 @@ import { ProductFilterPipe } from './product-filter.pipe';
 export /**
  * ProductList
  */
-    class ProductListComponent {
+    class ProductListComponent implements OnInit {
         pageTitle: string = 'Beer List';
         errorMessage: string;
         listFilter: string = 'cart';
