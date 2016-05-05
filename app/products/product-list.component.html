@@ -24,7 +24,9 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="#product of products"> 
-                        <td>{{product.id}} </td>
+                        <td>
+                            <!--<a [routerLink]="['ProductDetail',{id:product.id}]">{{product.id}} </a> -->
+                        </td>
                         <td>{{product.BeerStyle}} </td>
                         <td>{{product.IBU}} </td>
                         <td>{{product.starRating}} </td>

@@ -9,10 +9,14 @@
                 <div class="col-md-12">
                     <div class="form-group"> 
                         <input type="text" class="form-control input-lg" name="firstName" placeholder="First Name" ngControl="firstName" #firstName="ngForm"/>
-                        <div *ngIf = "firstName.touched && firstName.errors" class="form-spacer">
-                            <span *ngIf="!firstName.valid" class="alert alert-danger"> 
+                        <!--<div *ngIf = "firstName.touched && firstName.errors" class="form-spacer">
+                            <div *ngIf="!firstName.valid" class="alert alert-danger"> 
                                 <strong>First name required </strong>
-                            </span>
+                            </div>
+                       
+                        </div>-->
+                        <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger form-spacer">
+                                <span> lastName is required </span>
                         </div>
                     </div>
                 </div>

@@ -8,6 +8,7 @@ import { WelcomeComponent} from './home/welcome.component';
 import { DashboardComponent} from './dashboard/dashboard.component';
 
 import {ProductListComponent} from './products/product-list.component';
+import { ProductDetailComponent } from './products/product-detail.component';
 
 //services 
 import { ProductService} from './products/product.service';
@@ -26,7 +27,8 @@ import { ProductService} from './products/product.service';
 @RouteConfig([
     {path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault:true },
     { path: '/dashboard', name: 'Dashboard', component: DashboardComponent },
-    {path: '/products', name: 'Products', component: ProductListComponent}
+    { path: '/products', name: 'Products', component: ProductListComponent },
+    { path: 'product/:id', name: 'ProductDetailComponent', component: ProductDetailComponent }
 ])
 export class AppComponent { 
     pageTitle: string = 'Calorie Intake';

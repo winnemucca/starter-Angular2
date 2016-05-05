@@ -18,6 +18,10 @@ export class ProductService {
             .catch(this.handleError);
     }
 
+    getProduct(): Observable<IProduct> {
+        return;
+    }
+
     private handleError(error: Response) {
         // in a real world app, we may send the server to some remote logging infrastructure
         // instead of just logging it to the console
