@@ -38,4 +38,10 @@ export /**
                     error => this.errorMessage = <any>error
                     )
         }
+
+        onRatingClicked(message: string): void {
+            console.log('clicked', this.pageTitle);
+            // this isn't binding below issue with page title being undefined
+            this.pageTitle = "productList: " + message;
+        }
 }
