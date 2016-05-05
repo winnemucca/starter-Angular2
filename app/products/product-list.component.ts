@@ -5,11 +5,14 @@ import { StarComponent } from '../shared/star.component';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
 
 import { ProductService } from './product.service';
+import { ProductFilterPipe } from './product-filter.pipe';
+
 
 
 @Component({
     templateUrl: 'app/products/product-list.component.html',
     styleUrls: ['app/products/product-list.component.css'],
+    pipes: [ProductFilterPipe],
     directives: [StarComponent, ROUTER_DIRECTIVES]
 
 })
@@ -20,6 +23,7 @@ export /**
     class ProductListComponent {
         pageTitle: string = 'Beer List';
         errorMessage: string;
+        listFilter: string = 'cart';
         products: IProduct[];
         
         constructor(private _productService: ProductService) {

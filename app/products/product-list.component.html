@@ -4,10 +4,13 @@
     <div class="panel-body"> 
         <div class="row"> 
             <div class="col-md-2">Filter by: </div>
+            <div class="col-md-4"> 
+                <input type="text" [(ngModel)]="listFilter" />
+            </div>
         </div>
         
         <div class='col-md-4'>
-            <input type='text'  />
+            <h3>Filtered by:{{listFilter}} </h3>
         </div>
         <!--set up error message-->
         <div class='has-error' *ngIf='errorMessage'>{{errorMessage}}</div>
@@ -23,7 +26,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="#product of products"> 
+                    <tr *ngFor="#product of products |productFilter: listFilter"> 
                         <td>
                             <!--<a [routerLink]="['ProductDetail',{id:product.id}]">{{product.id}} </a> -->
                         </td>
