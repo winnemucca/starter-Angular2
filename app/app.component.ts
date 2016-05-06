@@ -28,7 +28,7 @@ import { ProductService} from './products/product.service';
     {path: '/welcome', name: 'Welcome', component: WelcomeComponent, useAsDefault:true },
     { path: '/dashboard', name: 'Dashboard', component: DashboardComponent },
     { path: '/products', name: 'Products', component: ProductListComponent },
-    { path: 'product/:id', name: 'ProductDetailComponent', component: ProductDetailComponent }
+    { path: '/product/:id', name: 'ProductDetailComponent', component: ProductDetailComponent }
 ])
 export class AppComponent { 
     pageTitle: string = 'Calorie Intake';
