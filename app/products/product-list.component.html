@@ -29,7 +29,7 @@
                     <tr *ngFor="#product of products |productFilter: listFilter"> 
                         <td>
                             <!--Todo identified errors in route Conig-->
-                            <!--<a [routerLink]="['ProductDetail',{id:product.id}]">{{product.id}} </a> -->
+                            <a [routerLink]="['ProductDetailComponent',{id:product.id}]">{{product.id}} </a> 
                         </td>
                         <td>{{product.BeerStyle}} </td>
                         <td>{{product.IBU}} </td>

@@ -6,8 +6,8 @@ import { IProduct } from './product';
 
 
 @Component({
-    templateUrl: './product-detail.component.html',
-    styleUrls:[ './product-detail.component.css']
+    templateUrl: 'app/products/product-detail.component.html',
+    styleUrls:[ 'app/products/product-detail.component.css']
 })
 
 export /**
