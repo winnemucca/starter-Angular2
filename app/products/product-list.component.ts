@@ -23,7 +23,7 @@ export /**
     class ProductListComponent implements OnInit {
         pageTitle: string = 'Beer List';
         errorMessage: string;
-        listFilter: string = 'cart';
+        listFilter: string = 'beer';
         products: IProduct[];
         
         constructor(private _productService: ProductService) {
